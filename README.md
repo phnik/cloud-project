@@ -1,7 +1,7 @@
 # cloud-project
 ## config server aws:
 ### cài đặt python, cài pip
-Sử dụng pip để install flask, flask_al
+Sử dụng pip để install flask, flask_al...
 ### filename:
 tạo file runweb.service với nội dung:
 [Unit]
@@ -29,3 +29,11 @@ associate các nhóm subnet lại
 tạo cấu hình t1.micro, sử dụng subnet public 2 của zone số 2 (us-east-1b)
 chọn đúng vpc chứa 2 subnet đã tạo bên trên, đồng thời chỉ định Network Security Group tương ứng.
 
+## thiết lập RDS
+Sử dụng 2 database Primary và Secondary, đặt trong 2 vùng subnet private đảm bảo bảo mật
+thiết đặt Security group chỉ cho phép máy chủ nằm trong Ec2 được kết nối
+
+## thiết lập load balancing và auto scaling group
+tạo target group
+tạo load balancing
+cài đặt ngưỡng cho auto scaling, min 2, desired 2, max 4
