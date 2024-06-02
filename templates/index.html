@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Binh chon Idol ua thich nhat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    </head>
+    <body>
+        <h1>Hãy bình chọn cho idol mà bạn thích nhất</h1>
+        <p>Lưu ý mỗi người chỉ được bình chọn 1 lần</p>
+        <div class="container">
+            <div class="left">
+                <form action="/choice" method="POST">
+                    <label for="username">Nhập tên của bạn: </label>
+                    <input type="text" name="username" id="username" required>
+                    <fieldset>
+                        <legend>Idol bạn muốn bình chọn:</legend>
+                        <div class="box">
+                            <img src="{{url_for('static', filename='images/sontung.jpg')}}" alt="sontung-mtp" class="avatar">
+                            <label for="son-tung"><input type="radio" name="choice" value="son-tung" id="son-tung" checked> Sơn Tùng MTP</label>
+                        </div>
+                        <div class="box">
+                            <img src="{{url_for('static', filename='images/mck.jpg')}}" alt="mck" class="avatar">
+                            <label for="mck"><input type="radio" name="choice" id="mck" value="mck"> MCK</label>
+                        </div>
+                        <div class="box">
+                            <img src="{{url_for('static', filename='images/tlinh.png')}}" alt="tlinh" class="avatar">
+                            <label for="tlinh"><input type="radio" name="choice" id="tlinh" value="tlinh"> Tlinh</label>
+                        </div>
+                        <div class="box">
+                            <img src="{{url_for('static', filename='images/thang.jpg')}}" alt="thang" class="avatar">
+                            <label for="thang-ngot"><input type="radio" name="choice" id="thang-ngot" value="thang-ngot"> Thắng ngọt</label>
+                        </div>
+                        <div class="box">
+                            <img src="{{url_for('static', filename='images/lowg.jpg')}}" alt="lowg" class="avatar">
+                            <label for="lowg"><input type="radio" name="choice" id="lowg" value="lowg"> Lowg</label>
+                        </div>
+                    </fieldset>
+                    
+                    <label for="message">Message:
+                    </label>
+                    <textarea id="message" name="message" rows="3" cols="25" placeholder="Some thing ..."></textarea>
+                    <button type="submit" value="Submit" class="submit">Bình chọn</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="middle">
+                <fieldset>
+                    <legend>Bảng xếp hạng</legend>
+                    <div class="box">
+                        1. 
+                    </div>
+                    <div class="box">
+                        2. 
+                    </div>
+                    <div class="box">
+                        3. 
+                    </div>
+                    <div class="box">
+                        4. 
+                    </div>
+                    <div class="box">
+                        5. 
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Messages</legend>
+
+                    <div class="box">1. {{top1}}</div>
+                    <div class="box">2. {{top2}}</div>
+                    <div class="box">3. {{top3}}</div>
+                    <div class="box">4. {{top4}}</div>
+                    <div class="box">5. {{top5}}</div>
+                </fieldset>
+                
+            </div>
+            <div class="right">
+                
+            </div>
+        </div>
+    </body>
+</html>
